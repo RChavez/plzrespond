@@ -1415,11 +1415,40 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  font-size: 24px;
   padding: 8px;
   line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #ddd;
+
 }
+.table > thead > .recentchange > th,
+.table > tbody > .recentchange > th,
+.table > tfoot > .recentchange > th,
+.table > thead > .recentchange > td,
+.table > tbody > .recentchange > td,
+.table > tfoot > .recentchange > td {
+  background-color: #9999ff;
+}
+.table > thead > .lowcount > th,
+.table > tbody > .lowcount > th,
+.table > tfoot > .lowcount > th,
+.table > thead > .lowcount > td,
+.table > tbody > .lowcount > td,
+.table > tfoot > .lowcount > td {
+  background-color: #ff7f7f;
+}
+.table > thead > .newitem > th,
+.table > tbody > .newitem > th,
+.table > tfoot > .newitem > th,
+.table > thead > .newitem > td,
+.table > tbody > .newitem > td,
+.table > tfoot > .newitem > td {
+  background-color: #bdbdbd;
+}
+
 .table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
