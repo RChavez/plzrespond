@@ -34,6 +34,6 @@ app.get('/chat', routes.chat);
 app.get('/inventory', routes.inventory);
 app.get('/', routes.index);
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port 3000 in %s mode", app.settings.env);
 });
