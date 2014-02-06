@@ -30,8 +30,8 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/chat', routes.chat);
-app.get('/inventory', routes.inventory);
+app.get('/chat.html', routes.chat);
+app.get('/inventory.html', routes.inventory);
 app.get('/', routes.index);
 
 app.listen(process.env.PORT || 3000, function(){
