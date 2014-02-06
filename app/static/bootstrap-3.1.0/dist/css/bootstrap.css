@@ -3680,6 +3680,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  box-shadow: 0 0 5px 5px #777; /* RYAN ADDED DROP TO NAVBAR */
 }
 @media (min-width: 768px) {
   .navbar {
