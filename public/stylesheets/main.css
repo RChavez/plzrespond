@@ -1,6 +1,7 @@
 .body {
 	background-color: #95a5a6;
 	font-family: 'Exo 2', sans-serif;
+	font-weight: 300pt;
 }
 a {
 	color: #ecf0f1;
@@ -9,16 +10,40 @@ a {
 	float: none;
 	margin: 0 auto;
 }
+p.no-margin {
+	font-weight: bold;
+}
 .no-margin {
 	margin: auto 0;
-	font-size: 22px;
+	color: #fff;
 }
 .divider {
-	margin-bottom: 40px;
+	margin-top: 0px;
+	margin-bottom: 20px;
 }
 .h3-no-vert-margin {
 	margin-top: 5px; 
 }
 p.text-center {
 	margin: 0 auto;
+}
+div.col-sm-12>h5, div.col-xs-12>h5 {
+	margin-top: -5px;
+	margin-left: -15px;
+}
+
+.col-sm-2, .col-xs-2 {
+	margin-right: 0px;
+	padding-right: 0px;
+}
+.col-sm-8, .col-xs-8 {
+	padding-left: 0px;
+}
+div>div.col-sm-12>h5 {
+	width: 500px;
+	color: #fff;
+} 
+div>div.col-xs-12>h5 {
+	width: 200px;
+	color: #fff;
 }
