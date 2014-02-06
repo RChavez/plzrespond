@@ -16,3 +16,9 @@ a {
 .divider {
 	margin-bottom: 40px;
 }
+.h3-no-vert-margin {
+	margin-top: 5px; 
+}
+p.text-center {
+	margin: 0 auto;
+}

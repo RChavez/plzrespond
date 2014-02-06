@@ -5580,7 +5580,7 @@ button.close {
   z-index: 15;
   width: 60%;
   padding-left: 0;
-  margin-left: -30%;
+  margin-left: -35%;
   text-align: center;
   list-style: none;
 }
@@ -5589,6 +5589,7 @@ button.close {
   width: 10px;
   height: 10px;
   margin: 1px;
+  margin-left: 25px;
   text-indent: -999px;
   cursor: pointer;
   background-color: #000 \9;
@@ -5600,6 +5601,7 @@ button.close {
   width: 12px;
   height: 12px;
   margin: 0;
+  margin-left: 24px;
   background-color: #fff;
 }
 .carousel-caption {
