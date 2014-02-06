@@ -293,8 +293,8 @@ a {
 }
 a:hover,
 a:focus {
-  color: #2a6496;
-  text-decoration: underline;
+  color: #34495e; /* #2a6496; CHANGED THIS */
+  text-decoration: none; /* underline; CHANGED THIS */
 }
 a:focus {
   outline: thin dotted;
@@ -461,9 +461,10 @@ h6,
 .h6 {
   font-size: 12px;
 }
-p {
-  margin: 0 0 10px;
+/* p {
+  margin: 0 0 10px;   RYAN CHANGED THIS
 }
+*/
 .lead {
   margin-bottom: 20px;
   font-size: 16px;
@@ -3973,8 +3974,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #195CC6; /* #f8f8f8; */
-  border-color: #195CC6; /* #e7e7e7; */
+  background-color: #3498db; /* #f8f8f8; */
+  border-color: #3498db; /* #e7e7e7; */
 }
 .navbar-default .navbar-brand {
   color: #fff; /* ADDED STYLING from #777; */
@@ -3998,8 +3999,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+  color: #ecf0f1; /* #555; CHANGED THIS */
+  background-color: #7f8c8d; /* #e7e7e7; CHANGED THIS */ 
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -5078,7 +5079,7 @@ a.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #ccc; /* RYAN CHANGE FROM #f5f5f5; */ 
+  background-color: #27ae60; /* RYAN CHANGE FROM #f5f5f5; */ 
   border: 1px solid #e3e3e3;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -5454,10 +5455,11 @@ button.close {
 }
 .carousel-inner {
   margin-bottom: 50px; /* RYAN ADDED THIS STYLING SO INDICATORS DON'T OVERLAY ALERTS */
-  background-color: #AAD6E3; /* RYAN ADDED THIS STYLING */
+  /* background-color: #2ecc71;  RYAN ADDED THIS STYLING */
+  background: none;
   position: relative;
-  margin-left: -4%; /* ADDED THIS IN TOO */
-  width: 108%; /* 100%; */
+  /* margin-left: -4%;  ADDED THIS IN TOO */
+  width: 100%; /* 100%; */
   margin-bottom: 0;
   overflow: hidden;
 }
@@ -5572,7 +5574,7 @@ button.close {
 }
 .carousel-indicators {
   position: absolute;
-  bottom: -95px; /* RYAN CHANGED FROM 10px to -50px SO INDICATORS DON'T OVERLAY ALERTS */
+  bottom: -65px; /* RYAN CHANGED FROM 10px to -50px SO INDICATORS DON'T OVERLAY ALERTS */
   left: 50%;
   z-index: 15;
   width: 60%;
