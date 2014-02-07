@@ -11,6 +11,7 @@ a {
 	margin: 0 auto;
 }
 p.no-margin {
+	margin-top: -5px;
 	font-weight: bold;
 }
 .no-margin {
