@@ -14,3 +14,7 @@ exports.chat = function(req, res) {
 exports.logout = function(req, res) {
 	res.render('logout.html');
 }
+
+exports.login = function(req, res) {
+	res.render('login.html');
+}

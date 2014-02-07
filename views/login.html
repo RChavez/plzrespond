@@ -36,10 +36,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
-        <li><a href="chat.html">Messenger</a></li>
-        <li class="active"><a href="#">Log Out</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Inventory</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Log Out</a></li>
       </ul>
       
     </div><!-- /.navbar-collapse -->
@@ -48,10 +48,38 @@
 <div class="container">
 
   <div class="well">
-    <h3 class="h3-no-vert-margin"><p class="text-center">You have logged out.</p></h3>
-    <div class="centered"><a href="login.html"><button type="button" class="btn btn-info btn-lg btn-block"><h4>Log back in.</h4></button></a></div>
+    <h3 class="h3-no-vert-margin"><p class="text-center">Welcome!</p></h3>
+    <div class="centered"><a href="login.html"><button type="button" class="btn btn-info btn-lg btn-block"><h4>Sign up.</h4></button></a></div>
 
-    <hr>
+    <form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a href="index.html" class="btn btn-default" role="button">Sign in</a>
+    </div>
+  </div>
+</form>
+
   </div>
   </div>
 
