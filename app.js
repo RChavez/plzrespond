@@ -32,6 +32,7 @@ app.configure('production', function(){
 
 app.get('/chat.html', routes.chat);
 app.get('/inventory.html', routes.inventory);
+app.get('/index.html', routes.index);
 app.get('/', routes.index);
 
 app.listen(process.env.PORT || 3000, function(){
