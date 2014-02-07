@@ -3,7 +3,12 @@
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 300pt;
 }
-a {
+.invbody {
+	background-color: #ecf0f1;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300pt;
+}
+h5 {
 	color: #ecf0f1;
 }
 .centered {
@@ -45,6 +50,6 @@ div>div.col-sm-12>h5 {
 	color: #fff;
 } 
 div>div.col-xs-12>h5 {
-	width: 200px;
+	width: 195px;
 	color: #fff;
 }

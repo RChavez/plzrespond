@@ -283,7 +283,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap requires jQuery'
   }
 
   Carousel.DEFAULTS = {
-    interval: false,
+    interval: 4000,
     pause: 'hover',
     wrap: true
   }
