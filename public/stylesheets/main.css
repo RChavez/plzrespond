@@ -9,12 +9,12 @@
 	font-weight: 300pt;
 }
 .chatbody {
-	background: url(https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn1/t31/1669726_10151960800018174_1612925819_o.jpg) no-repeat center center fixed;
+/*	background: url(https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn1/t31/1669726_10151960800018174_1612925819_o.jpg) no-repeat center center fixed;
 	-webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
-	font-family: 'Exo 2', sans-serif;
+*/	font-family: 'Exo 2', sans-serif;
 	font-weight: 300pt;
 	height: 100%
 }
@@ -62,4 +62,8 @@ div>div.col-sm-12>h5 {
 div>div.col-xs-12>h5 {
 	width: 195px;
 	color: #fff;
+}
+#chatpicture {
+	overflow: hidden;
+	width: 100%;
 }
