@@ -10,3 +10,7 @@ exports.inventory = function(req, res) {
 exports.chat = function(req, res) {
 	res.render('chat.html');
 }
+
+exports.logout = function(req, res) {
+	res.render('logout.html');
+}
