@@ -22,3 +22,11 @@ exports.login = function(req, res) {
 exports.createlogin = function(req, res) {
 	res.render('createlogin.html');
 }
+
+exports.soloconfirm = function(req, res) {
+	res.render('soloconfirm.html');
+}
+
+exports.success = function(req, res) {
+	res.render('success.html');
+}
