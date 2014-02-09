@@ -3,10 +3,29 @@
  * Module dependencies.
  */
 
-var express = require('express')
+
+var express = require('express'), app = express();
+var http = require('http')
+  , server = http.createServer(app)
+  , io = require('socket.io').listen(server)
   , routes = require('./routes');
 
-var app = express();
+server.listen(process.env.PORT || 3000);
+
+// var express = require('express')
+//   , routes = require('./routes')
+//   , http = require('http');
+
+// // var app = express();
+// // var server = http.createServer(3000);
+// // var io = require('socket.io').listen(server);
+
+
+// var app = express();
+// var server = app.listen(process.env.PORT || 3000, function(){
+//       console.log("Express server listening on port 3000 in %s mode", app.settings.env);
+//     });
+// var io = require('socket.io').listen(server);
 
 // Configuration
 
@@ -37,6 +56,24 @@ app.get('/login.html', routes.login);
 app.get('/logout.html', routes.logout);
 app.get('/', routes.index);
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port 3000 in %s mode", app.settings.env);
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port 3000 in %s mode", app.settings.env);
+// });
+
+//Socket IO
+
+io.sockets.on('connection', function(socket) {
+
+  socket.on('pseudo', function(data) {
+    socket.set('pseudo', data);
+  });
+
+  socket.on('message', function (message) {
+    socket.get('pseudo', function (error, name) {
+        var data = { 'message' : message, pseudo : name };
+        socket.broadcast.emit('message', data);
+        console.log("user " + name + " send this : " + message);
+    })
+  });
+
 });
