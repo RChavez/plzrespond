@@ -66,6 +66,7 @@ app.get('/', routes.index);
 io.sockets.on('connection', function(socket) {
 
   socket.on('pseudo', function(data) {
+    console.log('psuedo being set server-side ' + data);
     socket.set('pseudo', data);
   });
 

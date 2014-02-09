@@ -10,7 +10,6 @@ $(function() {
 
     $("#submit").click(function() {
     	sentMessage();
-    	console.log("message sent");
     });
    
 });
@@ -19,10 +18,16 @@ socket.on('connect', function() {
 	console.log('connected');
 });
 
-function addMessage(msg, pseudo) {
-	console.log("appending " + msg);
-    $("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
+function addMessage(msg, pseudo, date, self) {
+    if(self)
+        var divClass = 'sent_msg';
+    else
+        var divClass = 'received_msg';
+
+    $("#chatEntries").append('<div class=' + divClass +'><p>' 
+        + pseudo + ' : ' + msg + '</p></div>');
 }
+
 
 function sentMessage() {
 	console.log("message sent");
@@ -35,10 +40,8 @@ function sentMessage() {
 }
 
 function setPseudo() {
-	console.log("Setting pseudo");
-    if ($("#pseudoInput").val() != "")
-    {
-        socket.emit('setPseudo', $("#pseudoInput").val());
+    if ($("#pseudoInput").val() != "") {
+        socket.emit('pseudo', $("#pseudoInput").val());
         $('#chatControls').show();
         $('#pseudoInput').hide();
         $('#pseudoSet').hide();
@@ -46,5 +49,5 @@ function setPseudo() {
 }
 
 socket.on('message', function(data) {
-    addMessage(data['message'], data['pseudo']);
+    addMessage(data['message'], data['pseudo'], new Date().toISOString(), false);
 });
