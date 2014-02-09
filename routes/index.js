@@ -18,3 +18,7 @@ exports.logout = function(req, res) {
 exports.login = function(req, res) {
 	res.render('login.html');
 }
+
+exports.createlogin = function(req, res) {
+	res.render('createlogin.html');
+}

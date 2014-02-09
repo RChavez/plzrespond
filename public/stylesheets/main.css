@@ -40,6 +40,7 @@ p.no-margin {
 .h3-no-vert-margin {
 	margin-top: 5px; 
 }
+
 p.text-center {
 	margin: 0 auto;
 }
@@ -66,4 +67,20 @@ div>div.col-xs-12>h5 {
 #chatpicture {
 	overflow: hidden;
 	width: 100%;
+}
+.what-we-do {
+	background-color: #3498db;
+	margin-top: -20px;
+	padding-top: 5px;
+}
+.custom-bottom-margin {
+	margin-bottom: 0;
+}
+.custom-border {
+	border: transparent;
+}
+#current-user-name {
+	background-color: #5bc0de;
+	font-size: smaller;
+	color: #000;
 }
