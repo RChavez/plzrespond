@@ -53,16 +53,30 @@
           <h3>Messenger</h3>
         </div>
       </div>
-      <img id="chatpicture" src="https://scontent-b-lax.xx.fbcdn.net/hphotos-frc3/t1/1508519_10151960807603174_1542375344_n.jpg">
 
 
+      <div class="container">
+        <input type="text" class="pseudoInput">
+        <button class="pseudoSet"> Set Pseudo </button> 
 
+        <div class="chatEntries">
+          <div class="chatControls">
+            <input type="text" class="messageInput">
+            <button class="submit"> Send </button>
 
+          </div>
+        </div>
 
+      <div> 
+<!--       <img id="chatpicture" src="https://scontent-b-lax.xx.fbcdn.net/hphotos-frc3/t1/1508519_10151960807603174_1542375344_n.jpg">
+ -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
+    <script src="socket.io/socket.io.js"> </script>
+    <script src="js/chat.js"> </script>
   </body>
 </html>
