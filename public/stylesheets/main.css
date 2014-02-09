@@ -84,3 +84,9 @@ div>div.col-xs-12>h5 {
 	font-size: smaller;
 	color: #000;
 }
+#custom-well-size {
+	min-height: 375px;
+}
+#custom-margin-top-create-login {
+	margin-top: 15px;
+}

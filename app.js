@@ -54,6 +54,8 @@ app.get('/inventory.html', routes.inventory);
 app.get('/index.html', routes.index);
 app.get('/login.html', routes.login);
 app.get('/createlogin.html', routes.createlogin);
+app.get('/soloconfirm.html', routes.soloconfirm);
+app.get('/success.html', routes.success);
 app.get('/logout.html', routes.logout);
 app.get('/', routes.index);
 
