@@ -1,16 +1,31 @@
 
 var socket = io.connect();
 
+$(function() {
+
+    $("#chatControls").hide();
+    $("#pseudoSet").click(function() {
+    	setPseudo()
+    });
+
+    $("#submit").click(function() {
+    	sentMessage();
+    	console.log("message sent");
+    });
+   
+});
+
 socket.on('connect', function() {
 	console.log('connected');
 });
 
 function addMessage(msg, pseudo) {
+	console.log("appending " + msg);
     $("#chatEntries").append('<div class="message"><p>' + pseudo + ' : ' + msg + '</p></div>');
 }
 
 function sentMessage() {
-	console.log("messag sent");
+	console.log("message sent");
     if ($('#messageInput').val() != "") 
     {
         socket.emit('message', $('#messageInput').val());
