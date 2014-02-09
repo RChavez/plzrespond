@@ -15,8 +15,7 @@ $(function() {
 });
 
 socket.on('connect', function() {
-	console.log('connected');
-});
+	cospansole.log('connected');span});
 
 function addMessage(msg, pseudo, date, self) {
     if(self)
@@ -24,8 +23,8 @@ function addMessage(msg, pseudo, date, self) {
     else
         var divClass = 'received_msg';
 
-    $("#chatEntries").append('<div class=' + divClass +'><p>' 
-        + pseudo + ' : ' + msg + '</p></div>');
+    $("#chatEntries").append('<div class=' + divClass +'><span>' 
+        + pseudo + ' : ' + msg + '</span></div>');
 }
 
 
