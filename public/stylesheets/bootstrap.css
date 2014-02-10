@@ -730,7 +730,7 @@ pre code {
   border-radius: 0;
 }
 .pre-scrollable {
-  max-height: 340px;
+  max-height: 360px; /* CHANGED FROM 340px; FOR CHAT */
   overflow-y: scroll;
 }
 .container {
