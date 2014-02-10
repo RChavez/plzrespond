@@ -8,24 +8,19 @@ var express = require('express'), app = express();
 var http = require('http')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server)
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , mongoose = require('mongoose');
 
 server.listen(process.env.PORT || 3000);
 
-// var express = require('express')
-//   , routes = require('./routes')
-//   , http = require('http');
+mongoose.connect('mongodb://localhost/chatdb', function (err) {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log('Connected to mongoDB');
+  }
+});
 
-// // var app = express();
-// // var server = http.createServer(3000);
-// // var io = require('socket.io').listen(server);
-
-
-// var app = express();
-// var server = app.listen(process.env.PORT || 3000, function(){
-//       console.log("Express server listening on port 3000 in %s mode", app.settings.env);
-//     });
-// var io = require('socket.io').listen(server);
 
 // Configuration
 
