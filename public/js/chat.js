@@ -23,7 +23,7 @@ function addMessage(msg, pseudo, date, self) {
     else
         var divClass = 'received_msg';
 
-    $("#chatEntries").append('<div class=' + divClass +'><span>' 
+    $("#chatEntries").append('<div><span class=' + divClass +'>' 
         + pseudo + ' : ' + msg + '</span></div>');
 }
 
