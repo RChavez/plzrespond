@@ -80,23 +80,34 @@
   <table class="table">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Item Name</th>
-        <th>Quantity</th>
-        <th>Threshold</th>
-        <th>Modified By</th>
+        <th class="id-name">#</th>
+        <th class="item-name">Item Name</th>
+        <th class="qty-name">Quantity</th>
+        <th class="threshold-name">Threshold</th>
+        <th class="modified-name">Modified By</th>
       </tr>
     </thead>
     <tbody>
 <!-- ===========BACKEND STUFF START HERE ==========-->
 <!-- First row should be empty and allow user to input new item. -->
-      <tr class="newitem"><form id="addFriendForm" role="form" method="get" action="/inventory"><div class="form-group">
-        <td></td>
-        <td class="item-width"><input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name"></td>
-        <td class="qty-width"><input type="text" class="form-control" id="quantity" placeholder="Qty" name="quantity"></td>
-        <td class="threshold-width"><input type="text" class="form-control" id="threshold" placeholder="Threshold" name="threshold"></td>
-        <td><input type="submit" id="submitBtn" class="btn btn-default" value="Add Item"></input></td></div>
-            </form>
+      <tr class="newitem">
+        <form id="addFriendForm" role="form" method="get" action="/inventory">
+          <div class="form-group">
+            <td class="id-width"></td>
+            <td class="item-width">
+              <input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name">
+            </td>
+            <td class="qty-width">
+              <input type="text" class="form-control" id="quantity" placeholder="Qty" name="quantity">
+            </td>
+            <td class="threshold-width">
+              <input type="text" class="form-control" id="threshold" placeholder="Qty" name="threshold">
+            </td>
+            <td>
+              <input type="submit" id="submitBtn" class="btn btn-default" value="Add Item">
+            </td>
+          </div>
+        </form>
       </tr>
 <!-- ===========BACKEND STUFF END HERE ==========-->
 <!-- ===========BACKEND STUFF START HERE ==========-->
@@ -118,7 +129,6 @@
 <!-- ===========BACKEND STUFF START HERE ==========-->
     </tbody>
   </table>
-</div>
 
 
 

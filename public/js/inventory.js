@@ -9,7 +9,7 @@ exports.addItem = function(req, res) {
 			"item_name": req.query.item_name,
 			"quantity": req.query.quantity,
 			"threshold": req.query.threshold,
-			"modified_by": "Ryan Chavez"
+			"modified_by": "Ryan Chavez" /* NEED TO CHANGE TO ACTUAL USER LATER */
 
 		}
 		inventory_data["items"].push(newItem);
