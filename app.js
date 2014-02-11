@@ -11,6 +11,9 @@ var http = require('http')
   , routes = require('./routes')
   , mongoose = require('mongoose');
 
+var handlebars = require('express3-handlebars')
+var inventory = require('./routes/inventory');
+
 server.listen(process.env.PORT || 3000);
 
 mongoose.connect('mongodb://localhost/chatdb', function (err) {
@@ -26,7 +29,8 @@ mongoose.connect('mongodb://localhost/chatdb', function (err) {
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
-  app.engine('html', require('ejs').renderFile);
+  app.engine('handlebars', handlebars());
+  app.set('view engine', 'handlebars');
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
@@ -44,14 +48,14 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/chat.html', routes.chat);
-app.get('/inventory.html', routes.inventory);
-app.get('/index.html', routes.index);
-app.get('/login.html', routes.login);
-app.get('/createlogin.html', routes.createlogin);
-app.get('/soloconfirm.html', routes.soloconfirm);
-app.get('/success.html', routes.success);
-app.get('/logout.html', routes.logout);
+app.get('/chat', routes.chat);
+app.get('/inventory', inventory.addItem);
+app.get('/index', routes.index);
+app.get('/login', routes.login);
+app.get('/createlogin', routes.createlogin);
+app.get('/soloconfirm', routes.soloconfirm);
+app.get('/success', routes.success);
+app.get('/logout', routes.logout);
 app.get('/', routes.index);
 
 // app.listen(process.env.PORT || 3000, function(){

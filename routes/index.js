@@ -1,32 +1,33 @@
+var inventory_data = require("../data.json");
 
 exports.index = function (req, res) {
-	res.render('index.html');
+	res.render('index');
 }
 
 exports.inventory = function(req, res) {
-	res.render('inventory.html');
+	res.render('inventory', inventory_data);
 }
 
 exports.chat = function(req, res) {
-	res.render('chat.html');
+	res.render('chat');
 }
 
 exports.logout = function(req, res) {
-	res.render('logout.html');
+	res.render('logout');
 }
 
 exports.login = function(req, res) {
-	res.render('login.html');
+	res.render('login');
 }
 
 exports.createlogin = function(req, res) {
-	res.render('createlogin.html');
+	res.render('createlogin');
 }
 
 exports.soloconfirm = function(req, res) {
-	res.render('soloconfirm.html');
+	res.render('soloconfirm');
 }
 
 exports.success = function(req, res) {
-	res.render('success.html');
+	res.render('success');
 }
