@@ -11,6 +11,7 @@
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/inventory.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,15 +74,7 @@
   </div>
 
   <!-- PLAYING AROUND WITH STUFF -->
-      <form id="addFriendForm" role="form" method="get" action="/inventory">
-
-        <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name">
-          <input type="text" class="form-control" id="quantity" placeholder="Quantity" name="quantity">
-          <input type="text" class="form-control" id="threshold" placeholder="Threshold" name="threshold">
-        </div>
-            <input type="submit" id="submitBtn" class="btn btn-default" value="Add Item"></input>
-    </form>
+  
 
   <!-- Table -->
   <table class="table">
@@ -97,12 +90,13 @@
     <tbody>
 <!-- ===========BACKEND STUFF START HERE ==========-->
 <!-- First row should be empty and allow user to input new item. -->
-      <tr class="newitem">
+      <tr class="newitem"><form id="addFriendForm" role="form" method="get" action="/inventory"><div class="form-group">
         <td></td>
-        <td>(Add New Item)</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="item-width"><input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name"></td>
+        <td class="qty-width"><input type="text" class="form-control" id="quantity" placeholder="Qty" name="quantity"></td>
+        <td class="threshold-width"><input type="text" class="form-control" id="threshold" placeholder="Threshold" name="threshold"></td>
+        <td><input type="submit" id="submitBtn" class="btn btn-default" value="Add Item"></input></td></div>
+            </form>
       </tr>
 <!-- ===========BACKEND STUFF END HERE ==========-->
 <!-- ===========BACKEND STUFF START HERE ==========-->
