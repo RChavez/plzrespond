@@ -91,7 +91,7 @@
 <!-- ===========BACKEND STUFF START HERE ==========-->
 <!-- First row should be empty and allow user to input new item. -->
       <tr class="newitem">
-        <form id="addFriendForm" role="form" method="get" action="/inventory">
+        <form id="addFriendForm" role="form" method="get" action="/addRedirect">
           <div class="form-group">
             <td class="id-width"></td>
             <td class="item-width">
@@ -114,16 +114,20 @@
 <!-- Need to write a <tr> block for each item tied to account and highlight with appropirate color if recently changed or lower than threshold -->
 
 <!-- THIS STUFF WILL BE REPLACED WITH MONGODB QUERIES -->
+<script>
+var i = 0;
+</script>
     {{#each items}}
-      {{#if item_name.length}}
       <tr>
-        <td>{{id_number}}</td>
+        <script>
+          i = i + 1;
+          document.write("<td>" + i.toString() + "</td>");
+        </script>
         <td>{{item_name}}</td>
         <td>{{quantity}}</td>
         <td>{{threshold}}</td>
         <td>{{modified_by}}</td>
       </tr>
-      {{/if}}
     {{/each}}
 
 <!-- ===========BACKEND STUFF START HERE ==========-->
