@@ -48,5 +48,6 @@ function setPseudo() {
 }
 
 socket.on('message', function(data) {
+    console.log("Message received from" + data['pseudo'] + " : " + data['message']);
     addMessage(data['message'], data['pseudo'], new Date().toISOString(), false);
 });
