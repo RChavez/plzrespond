@@ -2,8 +2,6 @@
 /**
  * Module dependencies.
  */
-
-
 var express = require('express'), app = express();
 var http = require('http')
   , server = http.createServer(app)
@@ -16,14 +14,13 @@ var inventory = require('./routes/inventory');
 
 server.listen(process.env.PORT || 3000);
 
-mongoose.connect('mongodb://localhost/chatdb', function (err) {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log('Connected to mongoDB');
-  }
-});
-
+// mongoose.connect('mongodb://localhost/chatdb', function (err) {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log('Connected to mongoDB');
+//   }
+// });
 
 // Configuration
 
