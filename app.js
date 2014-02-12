@@ -47,7 +47,8 @@ app.configure('production', function(){
 
 app.get('/chat', routes.chat);
 app.get('/inventory', routes.inventory);
-app.get('/addRedirect', inventory.addItem)
+app.get('/addRedirect', inventory.addItem);
+app.get('/searchRedirect', inventory.search);
 app.get('/index', routes.index);
 app.get('/login', routes.login);
 app.get('/createlogin', routes.createlogin);

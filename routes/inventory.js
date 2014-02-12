@@ -16,3 +16,23 @@ exports.addItem = function(req, res) {
 		res.redirect('/inventory');
 	}
 }
+
+exports.search = function(req, res) {
+	if (req.query.item_name == "") {
+		res.redirect('inventory');
+	}
+	var i;
+	var results = 
+		{ 
+			"items": [
+			]
+	}
+	for (i = 0; i < inventory_data["items"].length; i++) {
+		var searchField = req.query.item_name.toLowerCase();
+		var iterator = inventory_data["items"][i].item_name.toLowerCase();
+		if (iterator.indexOf(searchField) != -1) {
+			results["items"].unshift(inventory_data["items"][i]);
+		}
+	}
+	res.render('inventory', results);
+}
