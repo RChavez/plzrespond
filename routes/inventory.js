@@ -17,6 +17,19 @@ exports.addItem = function(req, res) {
 	}
 }
 
+exports.removeItem = function(req, res) {
+	var i = 0;
+	for (i = 0; i < inventory_data["items"].length; i++) {
+		var target = req.query.item_name;
+		var iterator = inventory_data["items"][i].item_name;
+		if (iterator == target) {
+			inventory_data["items"].splice(i, 1);
+			res.redirect('/inventory');
+		}
+	}
+	res.redirect('/inventory');
+}
+
 exports.search = function(req, res) {
 	if (req.query.item_name == "") {
 		res.redirect('inventory');
@@ -31,7 +44,7 @@ exports.search = function(req, res) {
 		var searchField = req.query.item_name.toLowerCase();
 		var iterator = inventory_data["items"][i].item_name.toLowerCase();
 		if (iterator.indexOf(searchField) != -1) {
-			results["items"].unshift(inventory_data["items"][i]);
+			results["items"].push(inventory_data["items"][i]);
 		}
 	}
 	res.render('inventory', results);

@@ -124,9 +124,9 @@
 <!-- Need to write a <tr> block for each item tied to account and highlight with appropirate color if recently changed or lower than threshold -->
 
 <!-- THIS STUFF WILL BE REPLACED WITH MONGODB QUERIES -->
-<script>
-var i = 0;
-</script>
+  <script>
+    var i = 0;
+  </script>
     {{#each items}}
       <tr>
         <script>
@@ -137,6 +137,14 @@ var i = 0;
         <td>{{quantity}}</td>
         <td>{{threshold}}</td>
         <td>{{modified_by}}</td>
+        <form id="addFriendForm" role="form" method="get" action="/removeRedirect">
+          <div class="form-group">
+              <input type="hidden" class="form-control" name="item_name" value="{{{item_name}}}">
+            <td>
+              <input type="submit" id="submitBtn" class="btn btn-default" value="X">
+            </td>
+          </div>
+        </form>
       </tr>
     {{/each}}
 
@@ -144,11 +152,11 @@ var i = 0;
     </tbody>
   </table>
 
-    <script>
-  if (i == 0) {
-    document.write("<center>No Search Results Found</center>");
-  }
-</script>
+  <script>
+    if (i == 0) {
+      document.write("<center>No Inventory Items Found</center>");
+    }
+  </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
