@@ -12,6 +12,8 @@ td.threshold-width {
 .table {
 	margin-top: -15px;
 	border: solid 1px;
+	border-left: none;
+	border-right: none;
 }
 .panel {
 	margin-bottom: 0;
