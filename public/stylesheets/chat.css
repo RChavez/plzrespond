@@ -39,3 +39,10 @@
 	color: #fff;
 	font-variant: small-caps;
 }
+.messenger-btn {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.chat-field {
+	height: 46px;
+}

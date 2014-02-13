@@ -57,30 +57,19 @@
   <!-- Default panel contents -->
   <div class="panel-heading">
     <h3>Inventory</h3>
-    <form class="form-inline" role="form">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+    <form class="form-inline" id="addFriendForm" role="form" method="get" action="/searchRedirect">
       <div class="form-group">
-        <label class="sr-only" for="Search">Search inventory</label>
         <div class="col-xs-8">
-          <input type="search" class="form-control" id="exampleInputEmail2" placeholder="Search inventory">
+          <input type="text" class="form-control" id="name" placeholder="Search Inventory" name="item_name">
         </div>
+        <input type="submit" id="submitBtn" class="btn btn-default" value="Search">
       </div>
     </form>
-  </div>
-<!-- ===========BACKEND STUFF START HERE ==========-->
-  <form id="addFriendForm" role="form" method="get" action="/searchRedirect">
-    <div class="form-group">
-      <td class="item-width">
-        <input type="text" class="form-control" id="name" placeholder="Search Inventory" name="item_name">
-      </td>
-      <td>
-        <input type="submit" id="submitBtn" class="btn btn-default" value="Search">
-      </td>
-    </div>
-  </form>
-
 <!-- Searching should filter out unmatched items -->
 <!-- ===========BACKEND STUFF END HERE ==========-->
-
+  </div>
+</div>
 
 
   <!-- PLAYING AROUND WITH STUFF -->
@@ -88,13 +77,14 @@
 
   <!-- Table -->
   <table class="table">
-    <thead class="fixedH">
+    <thead class="">
       <tr>
         <th class="id-name">#</th>
         <th class="item-name">Item Name</th>
         <th class="qty-name">Quantity</th>
         <th class="threshold-name">Threshold</th>
         <th class="modified-name">Modified By</th>
+        <th class="">Remove</th>
       </tr>
     </thead>
     <tbody>
@@ -115,6 +105,11 @@
             </td>
             <td>
               <input type="submit" id="submitBtn" class="btn btn-default" value="Add Item">
+            </td>
+            <td>
+              <fieldset disabled>
+                <button type="submit" class="btn btn-default">X</button>
+              </fieldset>
             </td>
           </div>
         </form>
@@ -141,7 +136,7 @@
           <div class="form-group">
               <input type="hidden" class="form-control" name="item_name" value="{{{item_name}}}">
             <td>
-              <input type="submit" id="submitBtn" class="btn btn-default" value="X">
+              <input type="submit" id="submitBtn" class="btn btn-default no-padding-button" value="X">
             </td>
           </div>
         </form>
