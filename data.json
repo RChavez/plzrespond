@@ -2,7 +2,7 @@
 	"items": [
 		{
 			"id_number": "1",
-			"item_name": "Syringe",
+			"item_name": "Syringes",
 			"quantity": "25",
 			"threshold": "50",
 			"modified_by": "Ryan Chavez",

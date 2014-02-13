@@ -132,7 +132,7 @@
         <td>{{quantity}}</td>
         <td>{{threshold}}</td>
         <td>{{modified_by}}</td>
-        <form id="addFriendForm" role="form" method="get" action="/removeRedirect">
+        <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
               <input type="hidden" class="form-control" name="item_name" value="{{{item_name}}}">
             <td>
