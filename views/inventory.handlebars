@@ -18,6 +18,16 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<!--    <script>
+    function clickFocus() {
+      $('td').click(function (event) {
+        $('td').removeClass('focus'); //Remove focus from other TDs
+        $(this).addClass('focus');
+      });
+    }
+  </script> -->
+
   </head>
   <body class="invbody">
   
@@ -128,10 +138,10 @@
           i = i + 1;
           document.write("<td>" + i.toString() + "</td>");
         </script>
-        <td>{{item_name}}</td>
-        <td>{{quantity}}</td>
-        <td>{{threshold}}</td>
-        <td>{{modified_by}}</td>
+        <td contenteditable>{{item_name}}</td>
+        <td contenteditable>{{quantity}}</td>
+        <td contenteditable>{{threshold}}</td>
+        <td contenteditable>{{modified_by}}</td>
         <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
               <input type="hidden" class="form-control" name="item_name" value="{{{item_name}}}">
@@ -152,7 +162,6 @@
       document.write("<center>No Inventory Items Found</center>");
     }
   </script>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
