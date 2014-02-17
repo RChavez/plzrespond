@@ -26,13 +26,26 @@ h5 {
 	float: none;
 	margin: 0 auto;
 }
+.carousel-divider {
+	margin-top: 20px;
+	margin-bottom: 3px;
+}
+
+.carousel-h5 {
+	margin-top: 1px;
+	margin-bottom: 0px;
+}
+.carousel-hr {
+	margin-top: 3px;
+	margin-bottom: 20px;
+}
 p.no-margin {
 	margin-top: -5px;
 	font-weight: bold;
 }
 .no-margin {
 	margin: auto 0;
-	color: #fff;
+	color: #000;
 }
 .divider {
 	margin-top: 0px;
@@ -45,23 +58,7 @@ p.no-margin {
 p.text-center {
 	margin: 0 auto;
 }
-div.col-sm-12>h5, div.col-xs-12>h5 {
-	margin-top: -5px;
-}
 
-.col-sm-2, .col-xs-2 {
-	margin-right: 0px;
-	padding-right: 0px;
-}
-.col-sm-8, .col-xs-8 {
-	padding-left: 0px;
-}
-div>div.col-sm-12>h5 {
-	color: #fff;
-} 
-div>div.col-xs-12>h5 {
-	color: #fff;
-}
 #chatpicture {
 	overflow: hidden;
 	width: 100%;
@@ -88,4 +85,7 @@ div>div.col-xs-12>h5 {
 
 #more-top-margin {
 	margin-top: 14px; 
+}
+#higher-indicators {
+	bottom: -50px; /* RYAN CHANGED FROM 10px to -50px SO INDICATORS DON'T OVERLAY ALERTS */
 }

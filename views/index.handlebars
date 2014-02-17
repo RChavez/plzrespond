@@ -116,54 +116,61 @@
         </button>
       </a>
     </div>
-    <hr>
+    <hr class="carousel-divider">
 <!-- Carousel for new messages start -->
     <div id="carousel2" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
 <!-- ===========BACKEND STUFF START HERE ==========-->
 <!-- Need to write a <div class="item"> block for each new message -->
         <div class="item active">
-            <div class="row">
-
-              <div class="col-sm-12 col-xs-12">
+          <div class="row">
 <!-- Name of person message is from -->
-                <p class="no-margin">Brian:</p>
-                <div class="col-sm-12 col-xs-12">
+            <p class="no-margin">Brian Lai:</p>
+          </div>
+          <div class="row">
 <!-- Messege -->  
-                  <h5>Hey guys, I just received a bunch of bandages from the village I was just at from another doctor. Score!</h5>  
-                </div>
-              </div>
-            </div>
+            <h5 class="carousel-h5">Hey guys, I just received a bunch of bandages from the village I was just at from another doctor. Score! What else is new? Um well this now is a really long message but I'm just testing the dashboard space.</h5>  
+          </div>
         </div>
 
         <div class="item">
-            <div class="row">
-
-              <div class="col-sm-12 col-xs-12">
+          <div class="row">
 <!-- Name of person message is from -->
-                <p class="no-margin">Josh:</p>
-                <div class="col-sm-12 col-xs-12">
+            <p class="no-margin">Joshua Liu:</p>
+          </div>
+          <div class="row">
 <!-- Messege -->  
-                  <h5>I found an adorable kitten! I'm going to keep him!</h5>  
-                </div>
-              </div>
-            </div>
+            <h5 class="carousel-h5">I found an adorable kitten! I'm going to keep him!</h5>              
+          </div>
         </div>
       </div>
+
 <!-- =========== BACKEND STUFF END HERE ===========-->
 <!-- Indicators -->
 <!-- ===========BACKEND STUFF START HERE ==========-->
 <!-- Need to write <ol> with as many <li>'s as there are new messages -->
-      <ol class="carousel-indicators">
+      <ol id="higher-indicators" class="carousel-indicators">
         <li data-target="#carousel2" data-slide-to="0" class="active"></li>
         <li data-target="#carousel2" data-slide-to="1"></li>
       </ol>
 <!-- =========== BACKEND STUFF END HERE ===========-->
     </div>
 <!-- Carousel for new messages end -->
-    <hr>
+    <hr class="carousel-hr">
   </div>
 <!-- Messenger panel end -->
+</div>
+<hr class="divider">
+<div class="container">
+  <div class="well">
+    <div class="text-center">
+    <h4 class="no-margin">Your Team Code is:</h4>
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- === Populate with team's uniqie code === --> 
+      <h1><kbd>ABC-1234</kbd></h1>
+<!-- ======== BACKEND STUFF END HERE ======== -->
+    </div>
+  </div>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
