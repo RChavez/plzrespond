@@ -32,6 +32,10 @@ exports.createteam = function(req, res) {
 	res.render('createteam');
 }
 
+exports.jointeam = function(req, res) {
+	res.render('jointeam');
+}
+
 exports.newteamconfirm = function(req, res) {
 	res.render('newteamconfirm');
 }
@@ -42,6 +46,10 @@ exports.teamcode = function(req, res) {
 
 exports.soloconfirm = function(req, res) {
 	res.render('soloconfirm');
+}
+
+exports.jointeamconfirm = function(req, res) {
+	res.render('jointeamconfirm');
 }
 
 exports.success = function(req, res) {
