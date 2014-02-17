@@ -14,14 +14,6 @@ var inventory = require('./routes/inventory');
 
 server.listen(process.env.PORT || 3000);
 
-// mongoose.connect('mongodb://localhost/chatdb', function (err) {
-//   if(err) {
-//     console.log(err);
-//   } else {
-//     console.log('Connected to mongoDB');
-//   }
-// });
-
 // Configuration
 
 app.configure(function(){
@@ -62,13 +54,13 @@ app.get('/success', routes.success);
 app.get('/logout', routes.logout);
 app.get('/', routes.index);
 
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port 3000 in %s mode", app.settings.env);
-// });
-
 //Socket IO
 
 io.sockets.on('connection', function(socket) {
+  Chat.find({}, function(err, docs){
+    if(err) throw err;
+    socket.emit('loadOldMsgs', docs);
+  });
 
   socket.on('pseudo', function(data) {
     console.log('psuedo being set server-side ' + data);
@@ -77,10 +69,42 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('message', function (message) {
     socket.get('pseudo', function (error, name) {
+
+        //change Ryan Chavez back to "name"
         var data = { 'message' : message, pseudo : 'Ryan Chavez' };
-        socket.broadcast.emit('message', data);
+        var newMsg = new Chat({ pseudo: name, msg: message });
+        newMsg.save(function(err){
+          if(err) throw err;
+          socket.broadcast.emit('message', data);
+        });
         console.log("user " + name + " send this : " + message);
     })
+
   });
 
 });
+
+//MongoDB for Persistent Chat
+
+var mongooseURI =
+process.env.MONGOLAB_URI ||
+process.env.MONGOHQ_URL ||
+'mongodb://localhost/chatdb';
+
+mongoose.connect(mongooseURI, function (err) {
+  if(err) {
+    console.log(err);
+  } else {
+    console.log('Connected to mongoDB');
+  }
+});
+
+//schema defined
+var chatSchema = mongoose.Schema({
+  pseudo: String,
+  msg: String,
+  timeStamp: {type: Date, default: Date.now}
+});
+
+//creates an actual instance of chatSchema called 'Message'
+var Chat = mongoose.model('Message', chatSchema);

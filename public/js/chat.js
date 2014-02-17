@@ -15,7 +15,8 @@ $(function() {
 });
 
 socket.on('connect', function() {
-	cospansole.log('connected');span});
+	console.log('connected');
+});
 
 function addMessage(msg, pseudo, date, self) {
     if(self)
@@ -27,7 +28,27 @@ function addMessage(msg, pseudo, date, self) {
         + pseudo + ' : ' + msg + '</span></div>');
 }
 
+//for past messages (docs)
+function loadOldMsg(doc) {
 
+    console.log("NIGGAAAA RIGHT HURR " + doc.pseudo);
+    
+    if(doc.pseudo==null){
+        var divClass = 'sent_msg';
+        console.log("111");
+    }
+    else {
+        var divClass = 'received_msg';
+                console.log("222");
+
+    }
+
+    $("#chatEntries").append('<div><span class=' + divClass +'>' 
+        + doc.pseudo + ' : ' + doc.msg + '</span></div>');
+}
+
+
+//for live messages (data)
 function sentMessage() {
 	console.log("message sent");
     if ($('#messageInput').val() != "") 
@@ -51,3 +72,9 @@ socket.on('message', function(data) {
     console.log("Message received from" + data['pseudo'] + " : " + data['message']);
     addMessage(data['message'], data['pseudo'], new Date().toISOString(), false);
 });
+
+socket.on('loadOldMsgs', function(docs){
+    for (var i = 0 ;i < docs.length; i++) {
+        loadOldMsg(docs[i]);
+    }
+}); 
