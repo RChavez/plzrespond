@@ -11,7 +11,7 @@
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/soloconfirm.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/teamcode.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,51 +22,52 @@
   </head>
   <body class="body">
   
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a id="show-alert" class="navbar-brand" href="#">InvAid</a>
-      </div>
-    </div><!-- /.container-fluid -->
-  </nav>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">InvAid</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
 
-  <div class="container">
-    <div id="custom-well-size-soloconfirm" class="well">
-      <h3 class="h3-no-vert-margin">
-        <p class="text-center">Review and Confirm</p>
-      </h3>
-      <p class="text-center">Please confirm that your name and email is correct.</p>
-      <hr>
-      <div class="lead">
-        Name: <kbd> Ryan Chavez </kbd>
-      </div>
-      <div class="lead">
-        Email: <kbd> ryan22chavez@gmail.com </kbd>
-      </div>
-      <hr>
-      <form>
-      <div class="form-group form-inline pull-left">
-        <label class="sr-only" for="Edit">Edit</label>
-        <div class="col-xs-4 col-sm-1">
-        <a href="createlogin" id="custom-margin-top-create-login" class="btn btn-default">Edit</a>
-        </div>
-      </div>
-      <div class="form-group pull-right">
+
+<div class="container">
+
+  <div class="well">
+    <h3 class="h3-no-vert-margin">
+      <p class="text-center">IMPORTANT!</p>
+    </h3>
+    <div class="centered">
+      <p class="lead text-justified text-center">This is your Team's Registration Code. You will need this code to have other members of your organization join your team. You may find this code in your dashboard.</p>
+    </div>
+    <hr>
+    <div class="text-center">
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- === Populate with team's uniqie code === --> 
+      <h1><kbd>ABC - 1234</kbd></h1>
+<!-- ======== BACKEND STUFF END HERE ======== -->
+    </div>
+    <hr>
+    <form>
+      <div class="form-group">
         <label class="sr-only" for="Finish">Finish</label>
-        <div class="col-xs-4 col-sm-1">
-        <a href="success" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Finish</a>
+        <div>
+        <a href="success" id="custom-margin-top-create-login" type="button" class="btn btn-info btn-lg btn-block">Finish</a>
         </div>
       </div>
       </form>
-    </div>
   </div>
+</div>
 
+  <hr class="divider">
+
+<div class="container">
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-
   </body>
 </html>

@@ -24,6 +24,22 @@ exports.createlogin = function(req, res) {
 	res.render('createlogin');
 }
 
+exports.accounttype = function(req, res) {
+	res.render('accounttype');
+}
+
+exports.createteam = function(req, res) {
+	res.render('createteam');
+}
+
+exports.newteamconfirm = function(req, res) {
+	res.render('newteamconfirm');
+}
+
+exports.teamcode = function(req, res) {
+	res.render('teamcode');
+}
+
 exports.soloconfirm = function(req, res) {
 	res.render('soloconfirm');
 }

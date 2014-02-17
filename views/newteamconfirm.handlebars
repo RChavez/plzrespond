@@ -11,7 +11,7 @@
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/soloconfirm.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/newteamconfirm.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,38 +26,45 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a id="show-alert" class="navbar-brand" href="#">InvAid</a>
+        <a id="show-alert" class="navbar-brand" href="login">InvAid</a>
       </div>
     </div><!-- /.container-fluid -->
   </nav>
 
   <div class="container">
-    <div id="custom-well-size-soloconfirm" class="well">
+    <div id="custom-well-size" class="well">
       <h3 class="h3-no-vert-margin">
         <p class="text-center">Review and Confirm</p>
       </h3>
-      <p class="text-center">Please confirm that your name and email is correct.</p>
+      <p class="text-center">Please confirm the following information.</p>
       <hr>
       <div class="lead">
-        Name: <kbd> Ryan Chavez </kbd>
+        Name: <p><kbd> Ryan Chavez </kbd></p>
       </div>
       <div class="lead">
-        Email: <kbd> ryan22chavez@gmail.com </kbd>
+        Email: <p><kbd> ryan22chavez@gmail.com </kbd></p>
       </div>
-      <hr>
+  
+      <div class="lead">
+        Organization: <p><kbd> plzrespond </kbd></p>
+      </div>
+      <div class="lead">
+        Country: <p><kbd> United States of America </kbd></p>
+      </div>
+      <hr class="custom-bottom-margin">
       <form>
-      <div class="form-group form-inline pull-left">
-        <label class="sr-only" for="Edit">Edit</label>
-        <div class="col-xs-4 col-sm-1">
-        <a href="createlogin" id="custom-margin-top-create-login" class="btn btn-default">Edit</a>
+        <div class="form-group form-inline pull-left">
+          <label class="sr-only" for="Edit">Edit</label>
+          <div class="col-xs-4 col-sm-1">
+            <a href="createlogin" id="custom-margin-top-create-login" class="btn btn-default">Edit</a>
+          </div>
         </div>
-      </div>
-      <div class="form-group pull-right">
-        <label class="sr-only" for="Finish">Finish</label>
-        <div class="col-xs-4 col-sm-1">
-        <a href="success" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Finish</a>
+        <div class="form-group pull-right">
+          <label class="sr-only" for="Finish">Finish</label>
+          <div class="col-xs-4 col-sm-1">
+            <a href="teamcode" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Continue</a>
+          </div>
         </div>
-      </div>
       </form>
     </div>
   </div>
