@@ -76,6 +76,7 @@ app.post('/signIn', function(req, res) {
         
       req.session.name = user.name;
       console.log("fuq " + req.session.name);
+      res.redirect("/");
     } else {
        console.log("User not found");
     }
