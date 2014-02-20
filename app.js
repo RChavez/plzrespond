@@ -7,8 +7,7 @@ var http = require('http')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server)
   , routes = require('./routes')
-  , mongoose = require('mongoose')
-  , connect = require('connect');
+  , mongoose = require('mongoose');
 
 var handlebars = require('express3-handlebars')
 var inventory = require('./routes/inventory');
