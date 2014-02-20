@@ -1,7 +1,8 @@
 var inventory_data = require("../data.json");
 
 exports.index = function (req, res) {
-	res.render('index');
+	console.log("HERE " + req.session.name);
+	res.render('index', { 'name' : req.session.name });
 }
 
 exports.inventory = function(req, res) {
@@ -9,7 +10,7 @@ exports.inventory = function(req, res) {
 }
 
 exports.chat = function(req, res) {
-	res.render('chat');
+	res.render('chat', { 'name' : req.session.name });
 }
 
 exports.logout = function(req, res) {
@@ -17,6 +18,7 @@ exports.logout = function(req, res) {
 }
 
 exports.login = function(req, res) {
+	console.log(req.session.name);
 	res.render('login');
 }
 

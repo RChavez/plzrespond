@@ -7,7 +7,8 @@ var http = require('http')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server)
   , routes = require('./routes')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , connect = require('connect');
 
 var handlebars = require('express3-handlebars')
 var inventory = require('./routes/inventory');
@@ -20,6 +21,8 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.engine('handlebars', handlebars());
   app.set('view engine', 'handlebars');
+  app.use(express.cookieParser('S3CRE7'));
+  app.use(express.cookieSession());
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
@@ -54,9 +57,62 @@ app.get('/success', routes.success);
 app.get('/logout', routes.logout);
 app.get('/', routes.index);
 
-//Socket IO
 
+//Ghetto set of global session (?) variables
+app.post('/signIn', function(req, res) {
+  console.log(req.body);
+  console.log(req.body.email);
+
+  User.findOne({
+    email: req.body.email
+  }, 
+
+  function(err, user){
+
+    if(user) {
+      if(err) 
+        throw err;
+        
+      req.session.name = user.name;
+      console.log("fuq " + req.session.name);
+    } else {
+       console.log("User not found");
+    }
+  });
+});
+
+app.post('/createLoginForm', function (req, res) {
+    req.session.tempName = req.body.name;
+    req.session.tempEmail = req.body.email;
+    res.redirect('/soloconfirm');
+});
+
+app.get('/populateSoloConfirm', function (req, res) {
+  
+  console.log("populating");
+  console.log(req.session.tempEmail);
+  res.json( {
+    "tempName" : req.session.tempName,
+    "tempEmail" : req.session.tempEmail
+  });
+});
+
+app.post('/confirmAccount', function (req, res) {
+    var newUser = new User({ email: req.session.tempEmail, name: req.session.tempName });
+    newUser.save(function(err){
+      if(err) 
+        throw err;
+    });
+    res.redirect('/success');
+});
+
+app.get('/pseudo', function(req, res) {
+  res.json({ user : req.session.name })
+});
+
+//Socket IO
 io.sockets.on('connection', function(socket) {
+
   Chat.find({}, function(err, docs){
     if(err) throw err;
     socket.emit('loadOldMsgs', docs);
@@ -71,7 +127,7 @@ io.sockets.on('connection', function(socket) {
     socket.get('pseudo', function (error, name) {
 
         //change Ryan Chavez back to "name"
-        var data = { 'message' : message, pseudo : 'Ryan Chavez' };
+        var data = { 'message' : message, pseudo : "pew" };
         var newMsg = new Chat({ pseudo: name, msg: message });
         newMsg.save(function(err){
           if(err) throw err;
@@ -79,9 +135,7 @@ io.sockets.on('connection', function(socket) {
         });
         console.log("user " + name + " send this : " + message);
     })
-
   });
-
 });
 
 //MongoDB for Persistent Chat
@@ -89,7 +143,7 @@ io.sockets.on('connection', function(socket) {
 var mongooseURI =
 process.env.MONGOLAB_URI ||
 process.env.MONGOHQ_URL ||
-'mongodb://localhost/chatdb';
+'mongodb://localhost/db';
 
 mongoose.connect(mongooseURI, function (err) {
   if(err) {
@@ -99,7 +153,15 @@ mongoose.connect(mongooseURI, function (err) {
   }
 });
 
-//schema defined
+// User Schema
+var UserSchema = new mongoose.Schema({
+  email: String,
+  name: String,
+});
+
+var User = mongoose.model('User', UserSchema);
+
+//Chat schema 
 var chatSchema = mongoose.Schema({
   pseudo: String,
   msg: String,
@@ -108,3 +170,15 @@ var chatSchema = mongoose.Schema({
 
 //creates an actual instance of chatSchema called 'Message'
 var Chat = mongoose.model('Message', chatSchema);
+
+//MongoDB for inventory
+
+// var itemSchema = mongoose.Schema({
+//   item_name: String,
+//   quantity: Number,
+//   threshold: Number,
+//   modified_by: String,
+//   last_modified: String
+// });
+
+// var ItemField = mongoose.model('Item', itemSchema);
