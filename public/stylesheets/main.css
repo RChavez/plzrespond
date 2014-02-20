@@ -47,6 +47,10 @@ p.no-margin {
 	margin: auto 0;
 	color: #000;
 }
+.little-margin {
+	margin: 2px 0 0px; 0;
+	color: #000;
+}
 .divider {
 	margin-top: 0px;
 	margin-bottom: 20px;
