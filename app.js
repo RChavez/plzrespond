@@ -128,7 +128,7 @@ io.sockets.on('connection', function(socket) {
     socket.get('pseudo', function (error, name) {
 
         //change Ryan Chavez back to "name"
-        var data = { 'message' : message, pseudo : "pew" };
+        var data = { 'message' : message, pseudo : name };
         var newMsg = new Chat({ pseudo: name, msg: message });
         newMsg.save(function(err){
           if(err) throw err;
