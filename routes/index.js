@@ -1,15 +1,17 @@
 var inventory_data = require("../data.json");
 
 exports.index = function (req, res) {
-	console.log("HERE " + req.session.name);
+	console.log("Setting session name " + req.session.name);
 	res.render('index', { 'name' : req.session.name });
 }
 
 exports.inventory = function(req, res) {
+	console.log("Setting session name " + req.session.name);
 	res.render('inventory', inventory_data);
 }
 
 exports.chat = function(req, res) {
+	console.log("Setting session name " + req.session.name);
 	res.render('chat', { 'name' : req.session.name });
 }
 
