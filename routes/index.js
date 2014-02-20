@@ -2,20 +2,30 @@ var inventory_data = require("../data.json");
 
 exports.index = function (req, res) {
 	console.log("Setting session name " + req.session.name);
-	res.render('index', { 'name' : req.session.name });
+	if(req.session.name)
+		res.render('index', { 'name' : req.session.name });
+	else
+		res.render('login');
 }
 
 exports.inventory = function(req, res) {
 	console.log("Setting session name " + req.session.name);
-	res.render('inventory', inventory_data);
+	if(req.session.name)
+		res.render('inventory', inventory_data);
+	else
+		res.render('login');
 }
 
 exports.chat = function(req, res) {
 	console.log("Setting session name " + req.session.name);
-	res.render('chat', { 'name' : req.session.name });
+	if(req.session.name)
+		res.render('chat', { 'name' : req.session.name });
+	else
+		res.render('login');
 }
 
 exports.logout = function(req, res) {
+	req.session = null;
 	res.render('logout');
 }
 
