@@ -1416,6 +1416,12 @@ th {
   max-height: 300px; /* ADDED THIS TO MAKE INVENTORY HORIZONTAL SCROLLABLE BUT HAVE FIXED HEADER */
   display: inline-block; /* ADDED THIS TO MAKE INVENTORY HORIZONTAL SCROLLABLE BUT HAVE FIXED HEADER */
 }
+.table tr:nth-child(even) { /*(even) or (2n 0)*/
+  background: #ccc;
+}
+.table tr:nth-child(odd) { /*(odd) or (2n 1)*/
+  background: #fff;
+}
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,

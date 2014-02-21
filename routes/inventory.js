@@ -31,8 +31,8 @@ exports.findAll = function(req, res) {
 exports.addItem = function(req, res) {
     var newItem = new models.Item({
         item_name: req.query.item_name,
-        quantity: req.query.quantity,
-        threshold: req.query.threshold,
+        quantity: parseInt(req.query.quantity, 10),
+        threshold: parseInt(req.query.threshold, 10),
         modified_by: req.query.modified_by
     })
 
@@ -99,17 +99,9 @@ function compareQuantity(a,b) {
 }
 
 function compareThreshold(a,b) {
-  if (a.threshold > b.threshold)
-     return -1;
   if (a.threshold < b.threshold)
-    return 1;
-  return 0;
-}
-
-function compareThreshold(a,b) {
-  if (a.modified_by > b.modified_by)
      return -1;
-  if (a.modified_by < b.modified_by)
+  if (a.threshold > b.threshold)
     return 1;
   return 0;
 }
@@ -135,7 +127,7 @@ exports.sortByName = function(req, res) {
 }
 
 // ADD THESE BACK FOR MORE SORTING FUNCTIONALITY
-/*exports.sortByQuantity = function(req, res) {
+exports.sortByQuantity = function(req, res) {
     models.Item
         .find()
         .exec(afterFind);
@@ -173,7 +165,7 @@ exports.sortByThreshold = function(req, res) {
         invItems["items"].sort(compareThreshold);
         res.render('inventory', invItems);
     }
-}*/
+}
 
 exports.sortByModified = function(req, res) {
     models.Item

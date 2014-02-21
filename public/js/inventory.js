@@ -1,3 +1,5 @@
+$(‘tr’:odd).css({backgroundColor: ‘#ccc’});
+
 var inventory_data = require("../data.json");
 
 exports.addItem = function(req, res) {

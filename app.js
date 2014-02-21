@@ -45,8 +45,8 @@ app.get('/addRedirect', inventory.addItem);
 app.get('/removeRedirect', inventory.removeItem);
 app.get('/searchRedirect', inventory.search);
 app.get('/sortNameRedirect', inventory.sortByName);
-/*app.get('/sortQuantityRedirect', inventory.sortByQuantity);
-app.get('/sortThresholdRedirect', inventory.sortByThreshold);*/
+app.get('/sortQuantityRedirect', inventory.sortByQuantity);
+app.get('/sortThresholdRedirect', inventory.sortByThreshold);
 app.get('/sortModifiedByRedirect', inventory.sortByModified);
 app.get('/index', routes.index);
 app.get('/login', routes.login);
