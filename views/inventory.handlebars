@@ -142,7 +142,7 @@
         <td contenteditable>{{item_name}}</td>
         <td contenteditable>{{quantity}}</td>
         <td contenteditable>{{threshold}}</td>
-        <td contenteditable>{{modified_by}}</td>
+        <td>{{modified_by}}</td>
         <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
               <input type="hidden" class="form-control" name="item_id" value="{{{_id}}}">
