@@ -81,3 +81,116 @@ exports.search = function(req, res) {
         res.render('inventory', invItems);
     }
 }
+
+function compareName(a,b) {
+  if (a.item_name < b.item_name)
+     return -1;
+  if (a.item_name > b.item_name)
+    return 1;
+  return 0;
+}
+
+function compareQuantity(a,b) {
+  if (a.quantity < b.quantity)
+     return -1;
+  if (a.quantity > b.quantity)
+    return 1;
+  return 0;
+}
+
+function compareThreshold(a,b) {
+  if (a.threshold > b.threshold)
+     return -1;
+  if (a.threshold < b.threshold)
+    return 1;
+  return 0;
+}
+
+function compareThreshold(a,b) {
+  if (a.modified_by > b.modified_by)
+     return -1;
+  if (a.modified_by < b.modified_by)
+    return 1;
+  return 0;
+}
+
+exports.sortByName = function(req, res) {
+    models.Item
+        .find()
+        .exec(afterFind);
+
+    function afterFind(err, items) {
+        var invItems = { 
+            "items": [
+            ], 
+            "name" : req.session.name
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareName);
+        res.render('inventory', invItems);
+    }
+}
+
+// ADD THESE BACK FOR MORE SORTING FUNCTIONALITY
+/*exports.sortByQuantity = function(req, res) {
+    models.Item
+        .find()
+        .exec(afterFind);
+
+    function afterFind(err, items) {
+        var invItems = { 
+            "items": [
+            ], 
+            "name" : req.session.name
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareQuantity);
+        res.render('inventory', invItems);
+    }
+}
+
+exports.sortByThreshold = function(req, res) {
+    models.Item
+        .find()
+        .exec(afterFind);
+
+    function afterFind(err, items) {
+        var invItems = { 
+            "items": [
+            ], 
+            "name" : req.session.name
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareThreshold);
+        res.render('inventory', invItems);
+    }
+}*/
+
+exports.sortByModified = function(req, res) {
+    models.Item
+        .find()
+        .exec(afterFind);
+
+    function afterFind(err, items) {
+        var invItems = { 
+            "items": [
+            ], 
+            "name" : req.session.name
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareModifiedBy);
+        res.render('inventory', invItems);
+    }
+}
