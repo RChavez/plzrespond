@@ -1,51 +1,83 @@
-var inventory_data = require("../data.json");
+var models = require('../models')
+
+function compareDate(a,b) {
+  if (a.last_modified > b.last_modified)
+     return -1;
+  if (a.last_modified < b.last_modified)
+    return 1;
+  return 0;
+}
+
+exports.findAll = function(req, res) {
+    models.Item
+        .find()
+        .exec(afterFind);
+
+    function afterFind(err, items) {
+        var invItems = { 
+            "items": [
+            ]
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareDate);
+        res.render('inventory', invItems);
+    }
+}
 
 exports.addItem = function(req, res) {
-	if(req.query.item_name == "") {
-		res.redirect('/inventory');
-	}
-	else {
-		var newItem = {
-			"item_name": req.query.item_name,
-			"quantity": req.query.quantity,
-			"threshold": req.query.threshold,
-			"modified_by": "Ryan Chavez"
+    var newItem = new models.Item({
+        item_name: req.query.item_name,
+        quantity: req.query.quantity,
+        threshold: req.query.threshold,
+        modified_by: "Joshua K. Liu"
+    })
 
-		}
-		inventory_data["items"].unshift(newItem);
-		res.redirect('/inventory');
-	}
+    newItem.save(afterAdd);
+
+    function afterAdd(err, items) {
+        res.redirect('/inventory')
+    }
 }
 
 exports.removeItem = function(req, res) {
-	var i = 0;
-	for (i = 0; i < inventory_data["items"].length; i++) {
-		var target = req.query.item_name;
-		var iterator = inventory_data["items"][i].item_name;
-		if (iterator == target) {
-			inventory_data["items"].splice(i, 1);
-			res.redirect('/inventory');
-		}
-	}
-	res.redirect('/inventory');
+    console.log("attempting to remove" + req.query.item_id);
+    models.Item
+        .find({ "_id": req.query.item_id})
+        .remove()
+        .exec(afterRemove);
+
+    function afterRemove(err, items) {
+        if(err) {
+            console.log(err);
+            res.send(500);
+        }
+        res.redirect('/inventory')
+    }
 }
 
 exports.search = function(req, res) {
-	if (req.query.item_name == "") {
-		res.redirect('inventory');
-	}
-	var i;
-	var results = 
-		{ 
-			"items": [
-			]
-	}
-	for (i = 0; i < inventory_data["items"].length; i++) {
-		var searchField = req.query.item_name.toLowerCase();
-		var iterator = inventory_data["items"][i].item_name.toLowerCase();
-		if (iterator.indexOf(searchField) != -1) {
-			results["items"].push(inventory_data["items"][i]);
-		}
-	}
-	res.render('inventory', results);
+    if (req.query.item_name == "") {
+        res.redirect('inventory');
+    }
+    var target = req.query.item_name;
+    models.Item
+        .find({ "item_name": { $regex: new RegExp(".*"+ target +".*", "i") } })
+        .exec(afterSearch);
+
+    function afterSearch(err, items) {
+        console.log(items);
+        var invItems = { 
+            "items": [
+            ]
+        }
+        var i;
+        for(i=0; i < items.length; i++) {
+            invItems["items"].push(items[i]);
+        }
+        invItems["items"].sort(compareDate);
+        res.render('inventory', invItems);
+    }
 }

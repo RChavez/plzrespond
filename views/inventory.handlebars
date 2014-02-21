@@ -144,7 +144,7 @@
         <td contenteditable>{{modified_by}}</td>
         <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
-              <input type="hidden" class="form-control" name="item_name" value="{{{item_name}}}">
+              <input type="hidden" class="form-control" name="item_id" value="{{{_id}}}">
             <td>
               <input type="submit" id="submitBtn" class="btn btn-default no-padding-button" value="X">
             </td>

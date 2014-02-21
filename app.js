@@ -40,7 +40,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/chat', routes.chat);
-app.get('/inventory', routes.inventory);
+app.get('/inventory', inventory.findAll);
 app.get('/addRedirect', inventory.addItem);
 app.get('/removeRedirect', inventory.removeItem);
 app.get('/searchRedirect', inventory.search);
