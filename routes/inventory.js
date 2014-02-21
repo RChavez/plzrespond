@@ -33,7 +33,7 @@ exports.addItem = function(req, res) {
         item_name: req.query.item_name,
         quantity: req.query.quantity,
         threshold: req.query.threshold,
-        modified_by: "Joshua K. Liu"
+        modified_by: req.query.modified_by
     })
 
     newItem.save(afterAdd);
@@ -44,7 +44,6 @@ exports.addItem = function(req, res) {
 }
 
 exports.removeItem = function(req, res) {
-    console.log("attempting to remove" + req.query.item_id);
     models.Item
         .find({ "_id": req.query.item_id})
         .remove()
