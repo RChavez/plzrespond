@@ -1,4 +1,3 @@
-var inventory_data = require("../data.json");
 
 exports.index = function (req, res) {
 	console.log("Setting session name " + req.session.name);
@@ -11,7 +10,7 @@ exports.index = function (req, res) {
 exports.inventory = function(req, res) {
 	console.log("Setting session name " + req.session.name);
 	if(req.session.name)
-		res.render('inventory', inventory_data);
+		res.render('inventory', { 'name' : req.session.name });
 	else
 		res.render('login');
 }

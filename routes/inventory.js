@@ -16,7 +16,8 @@ exports.findAll = function(req, res) {
     function afterFind(err, items) {
         var invItems = { 
             "items": [
-            ]
+            ], 
+            "name" : req.session.name
         }
         var i;
         for(i=0; i < items.length; i++) {
