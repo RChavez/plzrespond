@@ -31,8 +31,7 @@ exports.findAll = function(req, res) {
 exports.addItem = function(req, res) {
     var newItem = new models.Item({
         item_name: req.query.item_name,
-        quantity: parseInt(req.query.quantity, 10),
-        threshold: parseInt(req.query.threshold, 10),
+        status: req.query.status,
         modified_by: req.query.modified_by
     })
 
@@ -90,19 +89,40 @@ function compareName(a,b) {
   return 0;
 }
 
-function compareQuantity(a,b) {
-  if (a.quantity < b.quantity)
-     return -1;
-  if (a.quantity > b.quantity)
-    return 1;
-  return 0;
-}
-
-function compareThreshold(a,b) {
-  if (a.threshold < b.threshold)
-     return -1;
-  if (a.threshold > b.threshold)
-    return 1;
+function compareStatus(a,b) {
+    if (a.status == b.status) {
+        return 0;
+    }
+    if (a.status == "Surplus") {
+        return 1;
+    }
+    if (b.status == "Surplus") {
+        return -1;
+    }
+    if (a.status == "Normal") {
+        return 1;
+    }
+    if (b.status == "Normal") {
+        return -1;
+    }
+    if (a.status == "Low") {
+        return 1;
+    }
+    if (b.status == "Low") {
+        return -1;
+    }    
+    if (a.status == "Reserve") {
+        return 1;
+    }
+    if (b.status == "Reserve") {
+        return -1;
+    }
+    if (a.status == "Empty") {
+        return 1;
+    }
+    if (b.status == "Empty") {
+        return -1;
+    }
   return 0;
 }
 
@@ -126,8 +146,7 @@ exports.sortByName = function(req, res) {
     }
 }
 
-// ADD THESE BACK FOR MORE SORTING FUNCTIONALITY
-exports.sortByQuantity = function(req, res) {
+exports.sortByStatus = function(req, res) {
     models.Item
         .find()
         .exec(afterFind);
@@ -142,27 +161,8 @@ exports.sortByQuantity = function(req, res) {
         for(i=0; i < items.length; i++) {
             invItems["items"].push(items[i]);
         }
-        invItems["items"].sort(compareQuantity);
-        res.render('inventory', invItems);
-    }
-}
-
-exports.sortByThreshold = function(req, res) {
-    models.Item
-        .find()
-        .exec(afterFind);
-
-    function afterFind(err, items) {
-        var invItems = { 
-            "items": [
-            ], 
-            "name" : req.session.name
-        }
-        var i;
-        for(i=0; i < items.length; i++) {
-            invItems["items"].push(items[i]);
-        }
-        invItems["items"].sort(compareThreshold);
+        invItems["items"].sort(compareName);
+        invItems["items"].sort(compareStatus);
         res.render('inventory', invItems);
     }
 }

@@ -3,8 +3,7 @@ var Mongoose = require('mongoose');
 
 var inventorySchema = Mongoose.Schema({
   item_name: String,
-  quantity: Number,
-  threshold: Number,
+  status: String,
   modified_by: String,
   last_modified: {type: Date, default: Date.now}
 });

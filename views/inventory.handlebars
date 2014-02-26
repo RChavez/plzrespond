@@ -97,8 +97,7 @@
       <tr>
         <th class="id-name"><a href='/inventory'>#</a></th>
         <th class="item-name"><a href='/sortNameRedirect'>Item Name</a></th>
-        <th class="qty-name"><a href='/sortQuantityRedirect'>Quantity</a></th>
-        <th class="threshold-name"><a href='/sortThresholdRedirect'>Threshold</a></th>
+        <th class="qty-name"><a href='/sortStatusRedirect'>Status</a></th>
         <th class="modified-name"><a href='/inventory'>Modified By</a></th>
         <th class="">Remove</th>
       </tr>
@@ -111,13 +110,16 @@
           <div class="form-group">
             <td class="id-width"></td>
             <td class="item-width">
-              <input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name">
+              <input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name" required>
             </td>
             <td class="qty-width">
-              <input type="text" class="form-control" id="quantity" placeholder="Qty" name="quantity">
-            </td>
-            <td class="threshold-width">
-              <input type="text" class="form-control" id="threshold" placeholder="Qty" name="threshold">
+              <select name="status" required>
+                <option value="Surplus">Surplus</option>
+                <option value="Normal" selected>Normal</option>
+                <option value="Low">Low</option>
+                <option value="Reserve">Reserve</option>
+                <option value="Empty">Empty</option>
+              </select>
             </td>
             <td>
               <input type="submit" id="submitBtn" class="btn btn-default" value="Add Item">
@@ -146,8 +148,7 @@
           document.write("<td>" + i.toString() + "</td>");
         </script>
         <td contenteditable>{{item_name}}</td>
-        <td contenteditable>{{quantity}}</td>
-        <td contenteditable>{{threshold}}</td>
+        <td contenteditable>{{status}}</td>
         <td>{{modified_by}}</td>
         <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
