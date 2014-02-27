@@ -25,3 +25,18 @@ td.threshold-width {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+.dropdown-menu > option > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu > option > a:hover,
+.dropdown-menu > option > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}

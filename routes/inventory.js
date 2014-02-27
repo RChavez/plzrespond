@@ -111,10 +111,10 @@ function compareStatus(a,b) {
     if (b.status == "Low") {
         return -1;
     }    
-    if (a.status == "Reserve") {
+    if (a.status == "Restock Now") {
         return 1;
     }
-    if (b.status == "Reserve") {
+    if (b.status == "Restock Now") {
         return -1;
     }
     if (a.status == "Empty") {
