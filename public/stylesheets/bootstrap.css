@@ -4960,7 +4960,7 @@ a.list-group-item-danger.active:focus {
   padding-right: 15px;
   padding-bottom: 0px;
   padding-left: 15px;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #3498db;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -5013,7 +5013,7 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-heading {
   color: #000; /* #333; */
   background-color: #3498db; /* #f5f5f5; */
-  border-color: #ddd;
+  border-color: #3498db;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #ddd;
