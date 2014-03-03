@@ -86,6 +86,12 @@ app.post('/signIn', function(req, res) {
   });
 });
 
+/*
+app.get('/scottsucks') {
+
+
+}
+ */
 app.post('/createLoginForm', function (req, res) {
     req.session.tempName = req.body.name;
     req.session.tempEmail = req.body.email;
