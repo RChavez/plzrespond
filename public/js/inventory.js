@@ -8,7 +8,7 @@ $(".eastereggsnigga").click(function() {
 function scottklemmer() {
 	var status = $(".eastereggsnigga option:selected").text();
 	console.log(status);
-	/*
-	var getString = "scottsucks/" + status;
-		$.get(getString);	*/
+	
+	var getString = "editItem/" + status;
+		$.get(getString);	
 }

@@ -86,12 +86,14 @@ app.post('/signIn', function(req, res) {
   });
 });
 
-/*
-app.get('/scottsucks') {
 
+app.get('/editItem', function (req, res) {
+  console.log("Look what I found: " + req.body.status);
+  //req.session = req.body.status;
+  res.redirect('/chat');
 
-}
- */
+});
+ 
 app.post('/createLoginForm', function (req, res) {
     req.session.tempName = req.body.name;
     req.session.tempEmail = req.body.email;

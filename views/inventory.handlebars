@@ -145,7 +145,11 @@
     var i = 0;
   </script>
     {{#each items}}
-      <tr>
+      {{#if red.length}}
+        <tr class="lowcount">
+      {{else}}
+        <tr>
+      {{/if}}
         <script>
           i = i + 1;
           document.write("<td>" + i.toString() + "</td>");
@@ -154,7 +158,7 @@
         <td id ="foo">
           <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
             <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
-              <!-- <option value="{{status}}">{{status}}</option> -->
+              <option value="{{status}}">{{status}}</option>
               <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Normal</a></option>
               <option value="Low"><a role="menuitem" tabindex="-1" href="#">Low</a></option>
               <option value="Restock Now"><a role="menuitem" tabindex="-1" href="#">Restock Now</a></option>
