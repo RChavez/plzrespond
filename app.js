@@ -181,15 +181,3 @@ var chatSchema = mongoose.Schema({
 
 //creates an actual instance of chatSchema called 'Message'
 var Chat = mongoose.model('Message', chatSchema);
-
-//MongoDB for inventory
-
-// var itemSchema = mongoose.Schema({
-//   item_name: String,
-//   quantity: Number,
-//   threshold: Number,
-//   modified_by: String,
-//   last_modified: String
-// });
-
-// var ItemField = mongoose.model('Item', itemSchema);
