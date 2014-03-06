@@ -196,18 +196,19 @@
     }
   </script>
 
+  {{#each items}}
   <div class="row item_row"> 
     <div class="col-xs-5">
       <div class="row item_row_height item_name">
-        Item Name
+        {{item_name}}
       </div>
       <div class="row modified_by">
-        Last mod: <div class="user_name">Ryan Chavez</div>
+        Last mod: <div class="user_name">{{modified_by}}</div>
       </div>
     </div>
     <div class="col-xs-4">
       <div class="row item_row_height qty_title">
-        Quantity
+        Status
       </div>
       <div class="row quantity">
         <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
@@ -223,10 +224,18 @@
     </div>
     <div class="col-xs-3 status_button">
       <div class="row item_row_height">
-        <input type="submit" id="submitBtn" class="btn btn-default" value="Remove">
+          <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
+          <div class="form-group">
+              <input type="hidden" class="form-control" name="item_id" value="{{{_id}}}">
+            <td>
+              <input type="submit" id="submitBtn" class="btn btn-default no-padding-button" value="Remove">
+            </td>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  {{/each}}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
