@@ -53,13 +53,42 @@ td.threshold-width {
 
 /* NEW INVENTORY STYLING */
 .item_row {
-	background-color: #ccc;
-	border: solid 2px #ddd;
+	background-color: #ddd;
+	border: solid 2px #eee;
 	border-left: none;
 	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .item_row_height {
 	line-height: 1.25;
-	padding-top: 3px;
 	font-weight: bold;
+}
+.item_name {
+	font-size: 16pt;
+}
+.item_number {
+	top: 15px;
+}
+.user_name {
+	display: inline-block;
+	font-weight: bold;
+}
+.qty_title {
+	padding-top: 3px;
+	font-size: 8pt;
+	text-align: center;
+}
+.quantity {
+	font-size: 16pt;
+	text-align: center;
+	font-weight: bold;
+}
+.status_button {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	padding-left: 23px;
+	border-left: solid 2px #fff;
+	
+	border
 }
