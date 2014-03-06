@@ -69,6 +69,7 @@ td.threshold-width {
 }
 .item_number {
 	top: 15px;
+
 }
 .user_name {
 	display: inline-block;
@@ -76,19 +77,18 @@ td.threshold-width {
 }
 .qty_title {
 	padding-top: 3px;
-	font-size: 8pt;
-	text-align: center;
+	padding-bottom: 5px;
+	font-size: 10pt;
+	text-align: left;
 }
 .quantity {
-	font-size: 16pt;
-	text-align: center;
+	font-size: 12pt;
+	text-align: left;
 	font-weight: bold;
 }
 .status_button {
 	padding-top: 15px;
 	padding-bottom: 10px;
-	padding-left: 23px;
-	border-left: solid 2px #fff;
+	text-align: center;
 	
-	border
 }
