@@ -42,7 +42,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">InvAid</a>
+      <a class="navbar-brand" href="#">INVENTORY</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,20 +67,28 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">
-    <h3>Inventory</h3>
 <!-- ===========BACKEND STUFF START HERE ==========-->
     <form class="form-inline" id="addFriendForm" role="form" method="get" action="/searchRedirect">
-      <div class="form-group">
-        <div class="col-xs-8">
+      <div class="form-group" id="search_reset_row">
+        <div class="col-xs-6">
           <input type="text" class="form-control" id="name" placeholder="Search Inventory" name="item_name">
         </div>
-        <input type="submit" id="submitBtn" class="btn btn-default" value="Search">
-      </div>
-    </form>
-    <form class="form-inline" id="addFriendForm" role="form" method="get" action="/inventory">
-      <div class="form-group">
-        <div class="col-xs-8">
-          <input type="submit" id="submitBtn" class="btn btn-default" value="Reset">
+        <div class="col-xs-2">
+          <input type="submit" id="submitBtn" class="btn btn-default pull-right" value="Reset" role="form" method="get" action="/inventory">
+        </div>
+        <div class="col-xs-2">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle btn-default submenu_width" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              Sort by:   
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" href="#">Item Name</a></li>
+              <li role="presentation"><a role="menuitem" href="#">Normal First</a></li>
+              <li role="presentation"><a role="menuitem" href="#">Red First</a></li>
+              <li role="presentation"><a role="menuitem" href="#">Modified By</a></li>
+            </ul>
+              </div>
         </div>
       </div>
     </form>
@@ -94,10 +102,10 @@
 
 
   <!-- Table -->
-  <table class="table">
+  <table id="margin-left" class="table">
     <thead class="">
       <tr>
-        <th class="id-name"><a href='/inventory'>#</a></th>
+        <th class="id-name">#</th>
         <th class="item-name"><a href='/sortNameRedirect'>Item Name</a></th>
         <th class="qty-name"><a href='/sortStatusRedirect'>Status</a></th>
         <th class="modified-name"><a href='/inventory'>Modified By</a></th>
@@ -183,6 +191,39 @@
       document.write("<center>No Inventory Items Found</center>");
     }
   </script>
+
+  <div class="row item_row">
+    <div class="col-xs-1 item_row_height">
+    1
+    </div>
+    <div class="col-xs-8">
+      <div class="row item_row_height">
+        Item Name
+      </div>
+      <div class="row">
+        Last mod by: Ryan
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </div>
+  </div>
+  <div class="row item_row">
+    <div class="col-xs-1 item_row_height">
+    1
+    </div>
+    <div class="col-xs-8">
+      <div class="row item_row_height">
+        Item Name
+      </div>
+      <div class="row">
+        Last mod by: Ryan
+      </div>
+    </div>
+    <div class="col-xs-3 item_row_height">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </div>
+  </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
