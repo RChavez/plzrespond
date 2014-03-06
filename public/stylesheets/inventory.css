@@ -61,11 +61,11 @@ td.threshold-width {
 	padding-bottom: 5px;
 }
 .item_row_height {
-	line-height: 1.25;
+	
 	font-weight: bold;
 }
 .item_name {
-	font-size: 16pt;
+	font-size: 10pt;
 }
 .item_number {
 	top: 15px;
@@ -79,17 +79,17 @@ td.threshold-width {
 	font-size: 8pt;
 }
 .qty_title {
-	padding-top: 3px;
+	
 	padding-bottom: 5px;
-	font-size: 10pt;
+	font-size: 8pt;
 	text-align: left;
 }
 .quantity {
-	font-size: 12pt;
+	font-size: 8pt;
 	text-align: left;
 	font-weight: bold;
 }
 .status_button {
-	padding-top: 6px;
+	padding-top: 2px;
 	padding-bottom: 0px;	
 }
