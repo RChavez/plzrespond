@@ -74,6 +74,10 @@ td.threshold-width {
 	display: inline-block;
 	font-weight: bold;
 }
+.modified_by {
+	padding-top: 6px;
+	font-size: 8pt;
+}
 .qty_title {
 	padding-top: 3px;
 	padding-bottom: 5px;
@@ -86,6 +90,6 @@ td.threshold-width {
 	font-weight: bold;
 }
 .status_button {
-	padding-top: 15px;
-	padding-bottom: 10px;	
+	padding-top: 6px;
+	padding-bottom: 0px;	
 }
