@@ -69,7 +69,6 @@ td.threshold-width {
 }
 .item_number {
 	top: 15px;
-
 }
 .user_name {
 	display: inline-block;
@@ -88,7 +87,5 @@ td.threshold-width {
 }
 .status_button {
 	padding-top: 15px;
-	padding-bottom: 10px;
-	text-align: center;
-	
+	padding-bottom: 10px;	
 }

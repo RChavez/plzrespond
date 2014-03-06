@@ -197,9 +197,7 @@
   </script>
 
   <div class="row item_row">
-    <div class="col-xs-1 item_row_height item_number">
-    1
-    </div>
+    
     <div class="col-xs-6">
       <div class="row item_row_height item_name">
         Item Name
@@ -208,19 +206,20 @@
         Last mod: <div class="user_name">Ryan Chavez</div>
       </div>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-4">
       <div class="row item_row_height qty_title">
-        Status
+        Quantity
       </div>
       <div class="row quantity">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
+        <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
+              <option value="{{status}}">{{status}}</option>
+              <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Enough</a></option>
+              <option value="Low"><a role="menuitem" tabindex="-1" href="#">Getting Low</a></option>
+              <option value="Restock Now"><a role="menuitem" tabindex="-1" href="#">Restock Now</a></option>
+              <option value="Empty"><a role="menuitem" tabindex="-1" href="#">Empty</a></option>
+            </ul>
+          </select>
       </div>
     </div>
     <div class="col-xs-1 status_button">
