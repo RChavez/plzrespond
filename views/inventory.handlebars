@@ -153,14 +153,18 @@
     var i = 0;
   </script>
     {{#each items}}
-      <tr>
+      {{#if red.length}}
+        <tr class="lowcount">
+      {{else}}
+        <tr>
+      {{/if}}
         <script>
           i = i + 1;
           document.write("<td>" + i.toString() + "</td>");
         </script>
         <td contenteditable>{{item_name}}</td>
-        <td>
-          <select class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
+        <td id ="foo">
+          <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
             <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
               <option value="{{status}}">{{status}}</option>
               <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Normal</a></option>
@@ -228,6 +232,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
+    <script src = "js/inventory.js"> </script>
 
   </body>
 </html>
