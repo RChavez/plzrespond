@@ -129,6 +129,15 @@ function compareStatus(a,b) {
   return 0;
 }
 
+function compareModifiedBy(a,b) {
+  if (a.modified_by < b.modified_by)
+     return -1;
+  if (a.modified_by > b.modified_by)
+    return 1;
+  return 0;
+}
+
+
 exports.sortByName = function(req, res) {
     models.Item
         .find()
