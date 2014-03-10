@@ -53,7 +53,7 @@ td.threshold-width {
 
 /* NEW INVENTORY STYLING */
 .item_row {
-	background-color: #ddd;
+	background-color: #ecf0f1;
 	border: solid 2px #eee;
 	border-left: none;
 	border-right: none;
@@ -92,4 +92,32 @@ td.threshold-width {
 .status_button {
 	padding-top: 2px;
 	padding-bottom: 0px;	
+}
+
+.item_row_red {
+	background-color: #c0392b;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+.item_row_orange {
+	background-color: #e67e22;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.item_row_yellow {
+	background-color: #f1c40f;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }

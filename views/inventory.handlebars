@@ -197,7 +197,19 @@
   </script>
 
   {{#each items}}
-  <div class="row item_row"> 
+  {{#if red.length}}
+    <div class="row item_row_red">
+  {{else}}
+    {{#if yellow.length}}
+      <div class="row item_row_yellow">
+    {{else}}
+      {{#if orange.length}}
+        <div class="row item_row_orange">
+      {{else}}
+        <div class="row item_row">
+      {{/if}}
+    {{/if}}
+  {{/if}} 
     <div class="col-xs-5">
       <div class="row item_row_height item_name">
         {{item_name}}
